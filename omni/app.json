@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "private.omni",
+      "script": "make",
+      "args": "omni",
+      "exec_interpreter": "none",
+      "exec_mode": "fork_mode",
+      "watch": false
+    }
+  ]
+}

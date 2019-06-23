@@ -1,0 +1,2 @@
+omni:
+	./omnicored --daemon -server -listen -port=8331 -addnode=127.0.0.1:28332 -connect=127.0.0.1:28332 -rpcuser=admin -rpcpassword=1 -rpcallowip=::/0 -rpcport=8432 -regtest=1 -addresstype=legacy -datadir=./regtest_omni -txindex

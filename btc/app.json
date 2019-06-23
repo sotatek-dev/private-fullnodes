@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "private.bitcore",
+      "script": "bitcore",
+      "args": "start",
+      "exec_interpreter": "none",
+      "exec_mode": "fork_mode",
+      "watch": false
+    },
+    {
+      "name": "private.bitcore.mine",
+      "script": "mine.js",
+      "watch": false
+    }
+  ]
+}
