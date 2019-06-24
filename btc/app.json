@@ -6,7 +6,8 @@
       "args": "start",
       "exec_interpreter": "none",
       "exec_mode": "fork_mode",
-      "watch": false
+      "watch": false,
+      "cron_restart": "*/30 * * * *"
     },
     {
       "name": "private.bitcore.mine",
