@@ -1,0 +1,64 @@
+version: '3'
+services:
+  omni_api:
+    build:
+      context: api
+      dockerfile: Dockerfile
+    depends_on:
+      - omni_postgres
+      - omni_engine
+      - omni_redis
+    links:
+      - omni_postgres
+      - omni_redis
+    ports:
+      - "5005:80"
+
+  omni_explorer:
+    build:
+      context: explorer
+      dockerfile: Dockerfile
+    depends_on:
+      - omni_api
+    links:
+      - omni_api
+    ports:
+      - "5006:3000"
+
+  omni_engine:
+    build:
+      context: engine
+      dockerfile: Dockerfile
+    depends_on:
+      - omni_postgres
+      - omni_redis
+    links:
+      - omni_postgres
+      - omni_redis
+    environment:
+      FLYWAY_PLACEHOLDERS_OMNIAPIPASSWORD: omniapipass
+      FLYWAY_PLACEHOLDERS_OMNIENGINEPASSWORD: omnienginepass
+      PGUSER: postgres
+      PGPASSWORD: postgresspass
+      PGHOST: omni_postgres
+      PGPORT: 5432
+      OMNIDB_DATABASE: omni
+      NETWORK: testnet
+
+  omni_postgres:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - "6436:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgresspass
+      POSTGRES_DB: omni
+
+  omni_redis:
+    image: redis:alpine
+    restart: always
+
+volumes:
+  pgdata:
