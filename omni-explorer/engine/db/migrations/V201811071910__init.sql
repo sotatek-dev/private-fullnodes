@@ -505,6 +505,11 @@ VALUES ('Fiat', 20, 'South African Rand', -1, -1, 'ZAR');
 INSERT INTO smartproperties (protocol, propertyid, issuer, createtxdbserialnum, lasttxdbserialnum, propertyname)
 VALUES ('Fiat', 21, 'Japanese Yen', -1, -1, 'JPY');
 
+INSERT INTO smartproperties (protocol, propertyid, issuer, ecosystem, createtxdbserialnum, lasttxdbserialnum, propertyname, propertytype, prevpropertyid, propertyserviceurl, propertycategory, propertysubcategory, propertydata, registrationdata, flags)
+VALUES ('Omni', 1, 'mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv', 'Production', 0, 0, 'Omni', 2, 0, null, '', '', '{"url": "http://www.omnilayer.org", "data": "Omni serve as the binding between Bitcoin, smart properties and contracts created on the Omni Layer.", "name": "Omni", "issuer": "mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv", "category": "N/A", "blocktime": 1377994675, "divisible": true, "propertyid": 1, "subcategory": "N/A", "totaltokens": "243522.54399773", "creationtxid": "0000000000000000000000000000000000000000000000000000000000000000", "fixedissuance": false, "managedissuance": false}', null, null);
+
+INSERT INTO smartproperties (protocol, propertyid, issuer, ecosystem, createtxdbserialnum, lasttxdbserialnum, propertyname, propertytype, prevpropertyid, propertyserviceurl, propertycategory, propertysubcategory, propertydata, registrationdata, flags)
+VALUES ('Omni', 2, 'mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv', 'Test', 0, 0, 'Test Omni', 2, 0, null, '', '', '{"url": "http://www.omnilayer.org", "data": "Test Omni serve as the binding between Bitcoin, smart properties and contracts created on the Omni Layer.", "name": "Test Omni", "issuer": "mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv", "category": "N/A", "blocktime": 1377994675, "divisible": true, "propertyid": 2, "subcategory": "N/A", "totaltokens": "188740.46001459", "creationtxid": "0000000000000000000000000000000000000000000000000000000000000000", "fixedissuance": false, "managedissuance": false}', null, null);
 
 /* load the Category and Subcategory values. 'zz' values are not part of ISIC */
 INSERT INTO categories (section, division, name) VALUES ('A', '00', 'Agriculture, forestry and fishing');

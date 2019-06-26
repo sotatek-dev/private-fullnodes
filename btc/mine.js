@@ -58,4 +58,4 @@ function tx() {
 }
 
 setInterval(() => mine(), 15000);
-setInterval(() => tx(), 500);
+setInterval(() => tx(), 1000);
