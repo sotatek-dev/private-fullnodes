@@ -1,14 +1,14 @@
-const http = require("http");
+const http = require('http');
 
 const options = {
-  method: "POST",
-  hostname: "127.0.0.1",
-  port: "8336",
+  method: 'POST',
+  hostname: '127.0.0.1',
+  port: '8336',
   headers: {
-    "Content-Type": "application/json",
-    Authorization: "Basic YWRtaW46MQ==",
-    "cache-control": "no-cache",
-    "Postman-Token": "9fb49641-c334-4afa-993a-19a203d97eb7"
+    'Content-Type': 'application/json',
+    Authorization: 'Basic YWRtaW46MQ==',
+    'cache-control': 'no-cache',
+    'Postman-Token': '9fb49641-c334-4afa-993a-19a203d97eb7'
   }
 };
 
@@ -16,20 +16,18 @@ function mine() {
   var req = http.request(options, function(res) {
     var chunks = [];
 
-    res.on("data", function(chunk) {
+    res.on('data', function(chunk) {
       chunks.push(chunk);
     });
 
-    res.on("end", function() {
+    res.on('end', function() {
       var body = Buffer.concat(chunks);
       console.log(body.toString());
     });
   });
 
-  req.write(
-    JSON.stringify({ jsonrpc: 2, id: 1, method: "generate", params: [1] })
-  );
-  req.on("error", err => {
+  req.write(JSON.stringify({ jsonrpc: 2, id: 1, method: 'generate', params: [1] }));
+  req.on('error', err => {
     console.log(err);
   });
   req.end();
@@ -39,11 +37,11 @@ function tx() {
   var req = http.request(options, function(res) {
     var chunks = [];
 
-    res.on("data", function(chunk) {
+    res.on('data', function(chunk) {
       chunks.push(chunk);
     });
 
-    res.on("end", function() {
+    res.on('end', function() {
       var body = Buffer.concat(chunks);
       console.log(body.toString());
     });
@@ -53,15 +51,15 @@ function tx() {
     JSON.stringify({
       jsonrpc: 2,
       id: 1,
-      method: "sendtoaddress",
-      params: ["mghKRjdqkLWppwEvnQAfvx8GbUD7TDuLbo", 0.001]
+      method: 'sendtoaddress',
+      params: ['mghKRjdqkLWppwEvnQAfvx8GbUD7TDuLbo', 0.001]
     })
   );
-  req.on("error", err => {
+  req.on('error', err => {
     console.log(err);
   });
   req.end();
 }
 
 setInterval(() => mine(), 15000);
-//setInterval(() => tx(), 8000);
+setInterval(() => tx(), 10000);
