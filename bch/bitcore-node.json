@@ -1,0 +1,21 @@
+{
+  "network": "regtest",
+  "port": 3006,
+  "services": ["bitcoind", "insight-bcash-api", "insight-bcash-ui", "web"],
+  "servicesConfig": {
+    "insight-bcash-ui": {
+      "routePrefix": "",
+      "apiPrefix": "api"
+    },
+    "insight-bcash-api": {
+      "routePrefix": "api",
+      "disableRateLimiter": true
+    },
+    "bitcoind": {
+      "spawn": {
+        "datadir": "./data",
+        "exec": "./bitcoincashd"
+      }
+    }
+  }
+}
