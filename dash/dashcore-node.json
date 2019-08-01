@@ -1,0 +1,26 @@
+{
+  "network": "regtest",
+  "port": 3003,
+  "services": [
+    "@dashevo/insight-api",
+    "@dashevo/insight-ui",
+    "dashd",
+    "web"
+  ],
+  "servicesConfig": {
+    "@dashevo/insight-ui": {
+      "routePrefix": "",
+      "apiPrefix": "api"
+    },
+    "@dashevo/insight-api": {
+      "routePrefix": "api",
+      "disableRateLimiter": true
+    },
+    "dashd": {
+      "spawn": {
+        "datadir": "./data",
+        "exec": "./dashd"
+      }
+    }
+  }
+}

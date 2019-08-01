@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "private.dashcore",
+      "script": "dashcore-node",
+      "args": "start",
+      "exec_interpreter": "none",
+      "exec_mode": "fork_mode",
+      "watch": false
+    },
+    {
+      "name": "private.dashcore.mine",
+      "script": "mine.js",
+      "watch": false
+    }
+  ]
+}

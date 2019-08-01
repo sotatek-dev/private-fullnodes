@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "private.litecore",
+      "script": "litecore-node",
+      "args": "start",
+      "exec_interpreter": "none",
+      "exec_mode": "fork_mode",
+      "watch": false
+    },
+    {
+      "name": "private.litecore.mine",
+      "script": "mine.js",
+      "watch": false
+    }
+
+  ]
+}
