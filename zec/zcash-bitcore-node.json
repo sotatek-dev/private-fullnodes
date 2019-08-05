@@ -1,0 +1,26 @@
+{
+  "network": "regtest",
+  "port": 3005,
+  "services": [
+    "bitcoind",
+    "insight-api",
+    "insight-ui",
+    "web"
+  ],
+  "servicesConfig": {
+    "insight-ui": {
+      "routePrefix": "",
+      "apiPrefix": "api"
+    },
+    "insight-api": {
+      "routePrefix": "api",
+      "disableRateLimiter": true
+    },
+    "bitcoind": {
+      "spawn": {
+        "datadir": "./data",
+        "exec": "./zcashd"
+      }
+    }
+  }
+}

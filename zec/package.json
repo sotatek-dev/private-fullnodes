@@ -1,0 +1,12 @@
+{
+  "description": "A full Zcash node build with Bitcore",
+  "repository": "https://github.com/user/project",
+  "license": "MIT",
+  "readme": "README.md",
+  "dependencies": {
+    "insight-api": "^0.4.3",
+    "insight-ui": "^0.4.0",
+    "zcash-bitcore-lib": "bitmex/zcash-bitcore-lib",
+    "zcash-bitcore-node": "bitmex/zcash-bitcore-node"
+  }
+}
