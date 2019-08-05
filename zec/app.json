@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "private.zcash",
+      "script": "zcash-bitcore-node",
+      "args": "start",
+      "exec_interpreter": "none",
+      "exec_mode": "fork_mode",
+      "watch": false
+    }
+  ]
+}
