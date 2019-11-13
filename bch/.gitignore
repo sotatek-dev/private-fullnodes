@@ -1,3 +1,4 @@
-data/regtest
+data/*
+!data/bitcoin.conf
 node_modules
 bitcoincashd
