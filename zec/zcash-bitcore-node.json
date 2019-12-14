@@ -1,18 +1,13 @@
 {
   "network": "regtest",
   "port": 3005,
-  "services": [
-    "bitcoind",
-    "insight-api",
-    "insight-ui",
-    "web"
-  ],
+  "services": ["bitcoind", "insight-api-zcash", "insight-ui-zcash", "web"],
   "servicesConfig": {
-    "insight-ui": {
+    "insight-ui-zcash": {
       "routePrefix": "",
       "apiPrefix": "api"
     },
-    "insight-api": {
+    "insight-api-zcash": {
       "routePrefix": "api",
       "disableRateLimiter": true
     },

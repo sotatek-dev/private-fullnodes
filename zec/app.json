@@ -7,6 +7,11 @@
       "exec_interpreter": "none",
       "exec_mode": "fork_mode",
       "watch": false
+    },
+    {
+      "name": "private.zcash.mine",
+      "script": "mine.js",
+      "watch": false
     }
   ]
 }
