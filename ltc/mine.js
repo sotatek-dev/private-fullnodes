@@ -27,7 +27,7 @@ function mine() {
   });
 
   req.write(
-    JSON.stringify({ jsonrpc: 1, id: "curltest", method: "generate", params: [1] })
+    JSON.stringify({ jsonrpc: 1, id: "rpc", method: "generate", params: [1] })
   );
   req.end();
 }
@@ -49,13 +49,13 @@ function tx() {
   req.write(
     JSON.stringify({
       jsonrpc: 1,
-      id: "curltest",
+      id: "rpc",
       method: "sendtoaddress",
-      params: ["mnZunfibLeAPocoFsLesEAorag4Fzc1sPv", 0.001]
+      params: ["mu6Sh4XNa4W3Vqz5osbitbpyC2PprqHT2c", 0.001]
     })
   );
   req.end();
 }
 
-setInterval(() => mine(), 15000);
-setInterval(() => tx(), 10000);
+setInterval(() => mine(), 120000);
+setInterval(() => tx(), 60000);
