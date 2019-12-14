@@ -61,5 +61,5 @@ function tx() {
   req.end();
 }
 
-setInterval(() => mine(), 15000);
-setInterval(() => tx(), 10000);
+setInterval(() => mine(), 300000);
+setInterval(() => tx(), 150000);
