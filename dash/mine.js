@@ -32,7 +32,36 @@ function mine() {
   req.end();
 }
 
-function tx() {
+function createAddr() {
+  var req = http.request(options, function(res) {
+    var chunks = [];
+
+    res.on("data", function(chunk) {
+      chunks.push(chunk);
+    });
+
+    res.on("end", function() {
+      var body = Buffer.concat(chunks);
+      var string = body.toString();
+      let start = string.indexOf(":");
+      let end = string.indexOf(",");
+      let address = string.substring(start+2, end-1);
+      tx(address);
+    });
+  });
+
+  req.write(
+    JSON.stringify({
+      jsonrpc: 1,
+      id: "curltest",
+      method: "getnewaddress",
+      params: [""]
+    })
+  );
+  req.end();
+}
+
+function tx(address) {
   var req = http.request(options, function(res) {
     var chunks = [];
 
@@ -51,11 +80,11 @@ function tx() {
       jsonrpc: 1,
       id: "curltest",
       method: "sendtoaddress",
-      params: ["yi9MRFJhTrCs77HQBJt1JFCQrKoAwKzrx1", 0.01]
+      params: [address, 1]
     })
   );
   req.end();
 }
 
-setInterval(() => mine(), 30000);
-setInterval(() => tx(), 15000);
+setInterval(() => mine(), 300000);
+setInterval(() => createAddr(), 150000);
