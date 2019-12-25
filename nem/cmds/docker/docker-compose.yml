@@ -174,7 +174,8 @@ services:
     command: sh -c "/bin/sleep 15 && /bin/sh /app/bin/create-env.sh && /usr/local/bin/npm start"
     environment:
     - NEM_API_URL=http://rest-gateway:7899
-    - NEM_PUBLIC_URL=http://localhost:7899
+    - NEM_PUBLIC_URL=http://priv-nem-api.sotatek.com
+    - NEM_NETWORK=TEST_NET
     volumes:
     # for reading private key from addresses.yaml
     - ../../build/generated-addresses:/addresses:ro
