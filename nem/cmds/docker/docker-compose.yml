@@ -166,3 +166,22 @@ services:
     - ../../data/api-node-0:/data:rw
     - ../../bin/bash:/bin-mount
     - ../../build/state:/state
+
+  faucet:
+    # image: my-nem2-faucet # in case of built image
+    image: 44uk/nem2-faucet:fushicho2
+    stop_signal: SIGINT
+    command: sh -c "/bin/sleep 15 && /bin/sh /app/bin/create-env.sh && /usr/local/bin/npm start"
+    environment:
+    - NEM_API_URL=http://rest-gateway:7899
+    - NEM_PUBLIC_URL=http://localhost:7899
+    volumes:
+    # for reading private key from addresses.yaml
+    - ../../build/generated-addresses:/addresses:ro
+    # for reading generation hash from block file
+    - ../../data/api-node-0/00000:/data/00000:ro
+    ports:
+    - "7897:4000"
+    depends_on:
+    - rest-gateway
+    - api-node-0
