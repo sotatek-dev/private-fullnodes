@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "nem-explorer-private",
+      "script": "npm",
+      "args" : "run dev"
+    }
+  ]
+}
