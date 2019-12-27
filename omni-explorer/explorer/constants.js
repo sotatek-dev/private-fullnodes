@@ -23,7 +23,7 @@ const setApiUrl = () => {
   if (/localhost/i.test(hostName)) {
     API_URL_BASE = "http://localhost:5005/v1";
   } else {
-    if (hostName.indexOf("priv-omni-explorer.sotatek.com") > -1) {
+    if (hostName.indexOf("priv-omni-explorer") > -1) {
       API_URL_BASE = "http://priv-omni-api.sotatek.com/v1";
     } else {
       API_URL_BASE = `http://${hostName}:5005/v1`;
