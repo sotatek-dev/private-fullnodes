@@ -1,5 +1,12 @@
 # NEM private network setup
 
+### Dependencies
+- NEM faucet
+```
+cd nem-faucet
+docker build -t nem-priv-faucet .
+```
+
 ### How to run?
 
 ```
