@@ -1,4 +1,7 @@
 
+
+
+
 #    Copyright 2018 Tech Bureau, Corp
 # 
 #    Licensed under the Apache License, Version 2.0 (the "License");
@@ -169,20 +172,22 @@ services:
 
   faucet:
     # image: my-nem2-faucet # in case of built image
-    image: 44uk/nem2-faucet:fushicho2
+    image: nem-priv-faucet
     stop_signal: SIGINT
     command: sh -c "/bin/sleep 15 && /bin/sh /app/bin/create-env.sh && /usr/local/bin/npm start"
     environment:
+    - PORT=7897
     - NEM_API_URL=http://rest-gateway:7899
     - NEM_PUBLIC_URL=http://priv-nem-api.sotatek.com
     - NEM_NETWORK=TEST_NET
+    - NEM_MAX_FEE=100000
     volumes:
     # for reading private key from addresses.yaml
     - ../../build/generated-addresses:/addresses:ro
     # for reading generation hash from block file
     - ../../data/api-node-0/00000:/data/00000:ro
     ports:
-    - "7897:4000"
+    - "7897:7897"
     depends_on:
     - rest-gateway
     - api-node-0
