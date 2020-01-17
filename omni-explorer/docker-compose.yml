@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   omni_api:
     build:
@@ -13,6 +13,8 @@ services:
       - omni_redis
     ports:
       - "5005:80"
+    extra_hosts:
+      - "dockerhost:172.18.0.1"
 
   omni_explorer:
     build:
@@ -44,6 +46,8 @@ services:
       PGPORT: 5432
       OMNIDB_DATABASE: omni
       NETWORK: testnet
+    extra_hosts:
+      - "dockerhost:172.18.0.1"
 
   omni_postgres:
     image: postgres:alpine
