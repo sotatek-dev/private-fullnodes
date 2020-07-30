@@ -1,5 +1,5 @@
 {
-  "network": "regtest",
+  "network": "mainnet",
   "port": 3001,
   "services": ["bitcoind", "insight-api", "insight-ui", "web"],
   "servicesConfig": {

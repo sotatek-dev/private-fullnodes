@@ -1,5 +1,5 @@
 {
-  "network": "regtest",
+  "network": "mainnet",
   "port": 3006,
   "services": ["bitcoind", "insight-bcash-api", "insight-bcash-ui", "web"],
   "servicesConfig": {

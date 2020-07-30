@@ -1,16 +1,11 @@
 {
   "apps": [
     {
-      "name": "private.bch",
+      "name": "bch",
       "script": "bitcore",
       "args": "start",
       "exec_interpreter": "none",
       "exec_mode": "fork_mode",
-      "watch": false
-    },
-    {
-      "name": "private.bch.mine",
-      "script": "mine.js",
       "watch": false
     }
   ]

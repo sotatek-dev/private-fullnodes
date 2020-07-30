@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "private.omni",
+      "name": "main.omni",
       "script": "make",
       "args": "omni",
       "exec_interpreter": "none",
