@@ -41,7 +41,7 @@
     "net": "^1.0.2",
     "nuxt": "^2.11.0",
     "nuxt-buefy": "^0.3.19",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "querystring": "^0.2.0",
